@@ -20,7 +20,8 @@
   },
   "homepage": "https://github.com/avadavat/boolean-expressions#readme",
   "dependencies": {
-    "ohm-js": "^0.14.0"
+    "ohm-js": "^0.14.0",
+    "typescript": "^3.8.3"
   },
   "devDependencies": {
     "@types/jest": "^25.2.1",
