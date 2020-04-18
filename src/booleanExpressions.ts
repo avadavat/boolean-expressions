@@ -1,16 +1,24 @@
+import { grammar, Grammar, MatchResult } from "ohm-js";
+import { grammarRules } from "./grammar";
+
 interface ParseResult {
-  matchResult: any; // todo
+  matchResult: MatchResult;
   variableNames: string[];
 }
 
 export class BooleanExpressions {
-  constructor() {}
+  truthGrammar: Grammar;
+
+  constructor() {
+    this.truthGrammar = grammar(grammarRules);
+  }
 
   parse(exp: string): ParseResult {
+    // todo
     return { matchResult: undefined, variableNames: [] };
   }
 
-  evaluate(matchResult: any, variables: string[]): boolean {
+  evaluate(matchResult: MatchResult, variables: string[]): boolean {
     return false;
   }
 }
