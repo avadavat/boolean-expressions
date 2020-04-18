@@ -1,9 +1,9 @@
-[![NPM version](https://img.shields.io/npm/v/boolean-expressions.svg?style=flat)](https://www.npmjs.com/package/boolean-expressions)
-![NPM license](https://img.shields.io/npm/l/boolean-expressions.svg?style=flat)
-
 # boolean-expressions
 
 Boolean expression parser and evaluator. Makes use of the Ohm grammar package with grammar rules found [here](https://github.com/avadavat/boolean-expressions/blob/master/src/grammar/grammarRules.ts).
+
+[![NPM version](https://img.shields.io/npm/v/boolean-expressions.svg?style=flat)](https://www.npmjs.com/package/boolean-expressions)
+![NPM license](https://img.shields.io/npm/l/boolean-expressions.svg?style=flat)
 
 ## Installation
 
