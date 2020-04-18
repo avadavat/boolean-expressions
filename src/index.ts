@@ -1,3 +1,3 @@
-import { BooleanExpressions } from "./booleanExpressions";
+import BooleanExpressions from "./booleanExpressions";
 
 export default BooleanExpressions;

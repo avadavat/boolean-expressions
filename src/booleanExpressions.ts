@@ -1,16 +1,11 @@
-import { grammar, MatchResult } from "ohm-js";
+import { grammar } from "ohm-js";
 import { grammarRules } from "./grammar";
 import { extractVariables } from "./util";
 import { createSemantics } from "./evaluator";
 
-interface ParseResult {
-  matchResult: MatchResult;
-  variableNames: string[];
-}
-
-export class BooleanExpressions {
-  variableNames: string[];
-  evaluateFunc: (variables: string[]) => boolean;
+class BooleanExpressions {
+  private variableNames: string[];
+  private evaluateFunc: (variables: string[]) => boolean;
 
   constructor(exp: string) {
     const truthGrammar = grammar(grammarRules);
@@ -37,3 +32,5 @@ export class BooleanExpressions {
     return this.evaluateFunc(variables);
   }
 }
+
+export default BooleanExpressions;
