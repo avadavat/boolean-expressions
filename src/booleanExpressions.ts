@@ -1,6 +1,7 @@
-import { grammar, Grammar, MatchResult } from "ohm-js";
+import { grammar, MatchResult } from "ohm-js";
 import { grammarRules } from "./grammar";
 import { extractVariables } from "./util";
+import { createSemantics } from "./evaluator";
 
 interface ParseResult {
   matchResult: MatchResult;
@@ -8,29 +9,31 @@ interface ParseResult {
 }
 
 export class BooleanExpressions {
-  truthGrammar: Grammar;
+  variableNames: string[];
+  evaluateFunc: (variables: string[]) => boolean;
 
-  constructor() {
-    this.truthGrammar = grammar(grammarRules);
-  }
-
-  /**
-   * Parses the given boolean expression into a MatchResult and
-   * a list of unique variable names in the expression.
-   * @param exp The boolean expression string
-   */
-  parse(exp: string): ParseResult {
-    const matchResult = this.truthGrammar.match(exp);
+  constructor(exp: string) {
+    const truthGrammar = grammar(grammarRules);
+    const matchResult = truthGrammar.match(exp);
     if (matchResult.failed()) {
       throw new Error(`Parse failed ${matchResult.shortMessage}`);
     }
-
-    const variableNames = extractVariables(exp);
-    const parseResult: ParseResult = { matchResult, variableNames };
-    return parseResult;
+    this.variableNames = extractVariables(exp);
+    this.evaluateFunc = createSemantics(truthGrammar, matchResult);
   }
 
-  evaluate(matchResult: MatchResult, variables: string[]): boolean {
-    return false;
+  /**
+   * Returns a list of all the unique variable names in the boolean expression.
+   */
+  getVariableNames(): string[] {
+    return this.variableNames;
+  }
+
+  /**
+   * Evaluates the given boolean expression with the given variables set to true
+   * and the omitted variables set to false.
+   */
+  evaluate(variables: string[]): boolean {
+    return this.evaluateFunc(variables);
   }
 }
