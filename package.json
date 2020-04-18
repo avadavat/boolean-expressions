@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/avadavat/boolean-expressions/issues"
   },
-  "homepage": "https://github.com/avadavat/boolean-expressions#readme"
+  "homepage": "https://github.com/avadavat/boolean-expressions#readme",
+  "dependencies": {
+    "ohm-js": "^0.14.0"
+  }
 }
