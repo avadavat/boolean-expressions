@@ -1,5 +1,5 @@
 import BooleanExpressions from "../";
-import generateTestCases, { TestCase } from "./generateTestCases";
+import generateTestCases from "./generateTestCases";
 
 const testCases = generateTestCases();
 
