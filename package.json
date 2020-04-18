@@ -12,7 +12,14 @@
     "type": "git",
     "url": "git+https://github.com/avadavat/boolean-expressions.git"
   },
-  "keywords": [],
+  "keywords": [
+    "boolean",
+    "expression",
+    "parser",
+    "evaluator",
+    "ohm",
+    "grammar"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
