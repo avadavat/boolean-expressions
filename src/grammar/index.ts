@@ -1,3 +1,3 @@
-import { grammarRules } from "./grammarRules";
+import grammarRules from "./grammarRules";
 
 export { grammarRules };

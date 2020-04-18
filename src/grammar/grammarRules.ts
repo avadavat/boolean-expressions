@@ -1,4 +1,4 @@
-export const grammarRules = `
+const grammarRules = `
   Truth {
     Exp
       = BiconditionalExp
@@ -164,3 +164,5 @@ export const grammarRules = `
       ) ~(alnum+)
   }
 `;
+
+export default grammarRules;
